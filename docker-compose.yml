@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    dns:
+        build: ./bind
+        image: dns
+        ports:
+            - 53:53/udp
+            - 53:53/tcp
+        volumes:
+            - ./bind/conf:/etc/bind
+    web:
+        build: ./apache
+        image: web
+        ports:
+            - 80:80/tcp
+            - 443:443/tcp
+        volumes:
+            - ./apache/htdocs:/var/www/localhost/htdocs
