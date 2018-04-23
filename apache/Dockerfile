@@ -4,7 +4,6 @@ RUN apk add --no-cache apache2
 RUN mkdir -p /run/apache2
 
 EXPOSE 80/tcp 443/tcp
-VOLUME ["/var/www/localhost/htdocs"]
+VOLUME ["/var/www/localhost/htdocs", "/etc/apache2"]
 
-CMD ["-D", "FOREGROUND"]
-ENTRYPOINT ["/usr/sbin/httpd"]
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
