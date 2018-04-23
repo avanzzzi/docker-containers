@@ -17,3 +17,4 @@ services:
             - 443:443/tcp
         volumes:
             - ./apache/htdocs:/var/www/localhost/htdocs
+            - ./apache/conf:/etc/apache2
