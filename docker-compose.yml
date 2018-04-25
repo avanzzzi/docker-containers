@@ -9,6 +9,7 @@ services:
             - 53:53/tcp
         volumes:
             - ./bind/conf:/etc/bind
+        network_mode: bridge
     web:
         build: ./apache
         image: web
@@ -16,5 +17,7 @@ services:
             - 80:80/tcp
             - 443:443/tcp
         volumes:
-            - ./apache/htdocs:/var/www/localhost/htdocs
+            - ./apache/localhost:/var/www/localhost
+            - ./apache/iznv.com:/var/www/iznv.com
             - ./apache/conf:/etc/apache2
+        network_mode: bridge
