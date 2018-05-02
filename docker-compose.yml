@@ -9,7 +9,11 @@ services:
             - 53:53/tcp
         volumes:
             - ./bind/conf:/etc/bind
-        network_mode: bridge
+        container_name: docker_dns
+        restart: always
+        networks:
+            vpcbr:
+                ipv4_address: 192.201.102.2
     web:
         build: ./apache
         image: web
@@ -20,4 +24,13 @@ services:
             - ./apache/localhost:/var/www/localhost
             - ./apache/iznv.com:/var/www/iznv.com
             - ./apache/conf:/etc/apache2
-        network_mode: bridge
+        container_name: docker_web
+        restart: always
+        networks:
+            vpcbr:
+                ipv4_address: 192.201.102.3
+networks:
+    vpcbr:
+        ipam:
+            config:
+                - subnet: 192.201.102.0/24
