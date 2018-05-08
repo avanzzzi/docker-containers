@@ -1,8 +1,8 @@
 FROM debian:latest
 
 # install packages
-RUN apt-get update
-RUN apt-get install -qy \
+RUN apt-get update \
+  && apt-get install -qy \
   x11-apps \
   vim-gtk3 \
   rxvt-unicode \
@@ -25,4 +25,4 @@ USER dev
 ENV HOME /home/dev
 
 # execute gui program
-# CMD firefox-esr
+CMD ["firefox-esr"]
