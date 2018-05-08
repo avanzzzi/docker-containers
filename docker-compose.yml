@@ -21,9 +21,10 @@ services:
             - 80:80/tcp
             - 443:443/tcp
         volumes:
-            - ./apache/localhost:/var/www/localhost
-            - ./apache/iznv.com:/var/www/iznv.com
-            - ./apache/conf:/etc/apache2
+            - ./apache/localhost:/var/www/localhost/htdocs
+            - ./apache/iznv.com:/var/www/iznv.com/htdocs
+            - ./apache/conf/httpd.conf:/etc/apache2/httpd.conf
+            - ./apache/conf/vhosts.conf:/etc/apache2/conf.d/vhosts.conf
         container_name: docker_web
         restart: always
         networks:
