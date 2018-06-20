@@ -15,6 +15,13 @@ Or, if you want to run individual services
 > docker-compose run --service-ports web
 ```
 
+## Webserver
+To monitor the traffic of the webserver
+```
+> docker exec -it docker_web sh
+> tail -f /var/log/apache2/access.log
+```
+
 ## Using docker
 Build, tag and run containers directly from dockerfiles
 
