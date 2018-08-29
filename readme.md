@@ -48,7 +48,7 @@ Build, tag and run containers directly from dockerfiles
   -v $PWD/apache/conf/httpd.conf:/etc/apache2/httpd.conf \
   -v $PWD/apache/conf/vhosts.conf:/etc/apache2/conf.d/vhosts.conf \
   -v $PWD/apache/localhost:/var/www/localhost/htdocs \
-  -v $PWD/apache/iznv.com:/var/www/iznv.com/htdocs \
+  -v $PWD/apache/example.com:/var/www/example.com/htdocs \
   --name docker_web web
 ```
 For the containers above, take a look at docker-compose.yml to see exposed ports and volumes.
