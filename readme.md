@@ -31,7 +31,7 @@ Build, tag and run containers directly from dockerfiles
 ```
 ```
 > docker run \
-  -p 54:53/udp \
+  -p 53:53/udp \
   -p 53:53/tcp \
   -v $PWD/bind/conf:/etc/bind \
   --name docker_dns dns
