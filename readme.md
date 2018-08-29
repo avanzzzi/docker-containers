@@ -1,18 +1,18 @@
 # Multipurpose Docker Containers
 
 ## Using docker-compose
-Start all services defined in docker-compose.yml
+Start all services defined in a docker-compose file
 ```
-> docker-compose up [-d]
+> docker-compose -f compose.yml up [-d] 
 ```
-Stop all services defined in docker-compose.yml
+Stop all services defined in a docker-compose file
 ```
-> docker-compose down
+> docker-compose -f compose.yml down
 ```
 Or, if you want to run individual services
 ```
-> docker-compose run --service-ports dns
-> docker-compose run --service-ports web
+> docker-compose -f compose.yml run --service-ports dns
+> docker-compose -f compose.yml run --service-ports web
 ```
 
 ## Webserver
