@@ -7,7 +7,7 @@ xhost +local:
 XSOCK=/tmp/.X11-unix
 
 # run docker
-docker run --rm -ti -v $XSOCK:$XSOCK -e DISPLAY=$DISPLAY $1
+docker run --rm -v $XSOCK:$XSOCK -e DISPLAY=$DISPLAY $1
 
 # restore xhost
 xhost -local:
